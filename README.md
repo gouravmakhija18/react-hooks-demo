@@ -44,6 +44,7 @@ useEffect(fn, [dependencies])
 
 ## useMemo
 This hook is used to optimize the performance by caching the function in memory which value doesn't change often.
+
 **example:** 
 ```js
 function power(x) => x*x; // always will give same result for input x.
@@ -60,18 +61,19 @@ Be careful with Memory and performance overhead if you are using useMemo hook.
 
 
 ## useCallback
-It return a memoized version of the callback function that only changes if one of the dependencies has changed.
-Same as useMemo hook, it takes callback function along with array of dependency as an arguments.
+It return a memoized version of the callback function that only changes if any of its dependencies get change.
+Same as useMemo hook, useCallback hook also takes callback function along with array of dependency as an second argument.
 
 ```js
-Syntax: useCallback(callbackFunc, [dependecies List]);
+Syntax: useCallback(callbackFunc, [dependecies Array]);
 ```
 
 **useCallback vs useMemo**
+
 ```js
 useCallback(fn, deps) is equivalent to useMemo(() => fn, deps).
 ```
-useMemo is similar to useCallback except it allows you to apply memoization to any value type (not just functions).
+useMemo is similar to useCallback, except it allows you to apply memoization to any value type (not just functions).
 It does this by accepting a function which returns the value and then that function is only called when the value
 needs to be retrieved (which typically will only happen once each time an
 element in the dependencies array changes between renders).
