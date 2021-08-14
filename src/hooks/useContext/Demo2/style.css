@@ -1,0 +1,33 @@
+.main-wrapper {
+  padding: 20px 0;
+}
+
+select {
+  margin-bottom: 10px;;
+}
+
+.theme1 {
+  background: #6ba539; 
+  color: white;
+}
+
+.theme2 {
+  background: #e4002b;
+  color: white;
+}
+
+footer {
+  display: flex;
+  padding: 10px;
+  height:30px;
+  align-items: center;
+  justify-content: center;
+}
+
+footer.theme1  {
+  border: 10px solid #314b1a;
+}
+
+footer.theme2{
+  border: 10px solid #7d0018;
+}
