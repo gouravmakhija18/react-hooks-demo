@@ -11,7 +11,8 @@
 
 ## useState
 It is used to maintain the component state object.
-** Important Points:**
+
+**Important Points:**
   1. Everytime when we update the state using useState hook, it render the component
   2.  We always define hooks at the top of component.
   3. Hooks always render in order and can not used conditionally.
