@@ -42,6 +42,34 @@ Syntax
 useEffect(fn, [dependencies])
 ```
 
+#### There are three version of useEffect hooks
+
+```js
+// Version 1 - If the useEffect has no dependencies, then the callback function constantly executes whenever the component updates
+useEffect(function(){
+  // code here ...
+})
+
+// Version 2 - If the useEffect has dependencies it is equivalent of the componentDidUpdate
+useEffect(function(){
+  // code here ...
+},[])
+
+// or 
+useEffect(function(){
+  // code here ...
+},[dependency])
+
+// Version 3
+useEffect(function(){
+  // code here ...
+  return () => {
+    // it will run componentWillUnmount
+  }
+},[dependency])
+
+```
+
 ## useMemo
 This hook is used to optimize the performance by caching the function in memory which value doesn't change often.
 
@@ -77,6 +105,8 @@ useMemo is similar to useCallback, except it allows you to apply memoization to 
 It does this by accepting a function which returns the value and then that function is only called when the value
 needs to be retrieved (which typically will only happen once each time an
 element in the dependencies array changes between renders).
+
+Note: useCallback returns its function when the dependencies change while useMemo calls its function and returns the result.
 
 ## useRef
 useRef hook is similar as state only difference is that it doesn't re-update when its value get change.
